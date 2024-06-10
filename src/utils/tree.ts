@@ -5,8 +5,8 @@ import { Dict } from "./types";
 
 
 class Tree {
-  private expression: string;
-  private dictionary: Dict;
+  private readonly expression: string;
+  private readonly dictionary: Dict;
   private root: TreeNode | undefined;
 
   constructor(expression: string) {
@@ -70,8 +70,9 @@ class Tree {
     return leaves;
   }
 
-  public rake = (node: TreeNode) => {
-    // implement rake
+  public getLeavesWithoutExtremes = () => {
+    const leaves = this.getLeaves();
+    return leaves.slice(1, leaves.length - 1);
   }
 }
 
